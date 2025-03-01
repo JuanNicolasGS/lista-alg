@@ -18,3 +18,33 @@
 # FGTS (11%) : R$ 121,00
 # Total de descontos : R$ 165,00
 # Salário Liquido : R$ 935,00
+
+salarioBruto = float(input("Digite seu salario bruto para calcular os decontos: "))
+IR = 0
+salarioLiquido = 0
+INSS = salarioBruto * 0.10
+FGTS = salarioBruto * 0.11
+totalDescontos = 0
+if salarioBruto <= 900:
+    IR = salarioBruto * 0
+    totalDecontos = INSS
+    salarioLiquido = salarioBruto - totalDescontos
+    print(f"Salario bruto: R$ {salarioBruto}\n(INSENTO) IR: R$ 0.00\n(-) INSS (10%): R$ {INSS}\nFGTS (11%): R$ {FGTS}\nTotal de descontos: R$ {totalDescontos}\nSalario Liquido: R$ {salarioLiquido}")
+
+elif salarioBruto > 900 and salarioBruto <= 1500:
+    IR = salarioBruto * 0.05
+    totalDescontos = INSS + IR
+    salarioLiquido = salarioBruto - totalDescontos
+    print(f"Salario bruto: R$ {salarioBruto}\n(-) IR (5%): R$ {IR}\n(-) INSS (10%): R$ {INSS}\nFGTS (11%): R$ {FGTS}\nTotal de descontos: R$ {totalDescontos}\nSalario Liquido: R$ {salarioLiquido}")
+    
+elif salarioBruto > 1500 and salarioBruto <= 2500:
+    IR = salarioBruto * 0.10
+    totalDescontos = INSS + IR
+    salarioLiquido = salarioBruto - totalDescontos
+    print(f"Salario bruto: R$ {salarioBruto}\n(-) IR (10%): R$ {IR}\n(-) INSS (10%): R$ {INSS}\nFGTS (11%): R$ {FGTS}\nTotal de descontos: R$ {totalDescontos}\nSalario Liquido: R$ {salarioLiquido}")
+
+else:
+    IR = salarioBruto * 0.20
+    totalDescontos = INSS + IR
+    salarioLiquido = salarioBruto - totalDescontos
+    print(f"Salario bruto: R$ {salarioBruto}\n(-) IR (20%): R$ {IR}\n(-) INSS (10%): R$ {INSS}\nFGTS (11%): R$ {FGTS}\nTotal de descontos: R$ {totalDescontos}\nSalario Liquido: R$ {salarioLiquido}")
